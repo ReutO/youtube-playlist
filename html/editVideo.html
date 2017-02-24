@@ -1,0 +1,72 @@
+﻿<main>
+    <!--adding html for modals-->
+    <div ng-include="'/html/modal.html'"></div>
+    <div class="row">
+        <!--show for guest users only-->
+        <div ng-include="'/html/guestUsers.html'"></div>
+        <!--show if user is rgistered-->
+        <section ng-show="user.firstName !== 'Guest'" class="col-xs-12">
+            <div id="navigationtpath">
+                <span><a href="#!/editVideo/{{videoEdit.key}}">Edit Video</a></span>
+                <span><</span>
+                <span><a href="#!/playlist">Playlist</a></span>
+            </div>
+        </section>
+        <section class="col-xs-12" ng-show="user.firstName !== 'Guest'" ng-if="videoEdit.key"><!--ng-if- for video key value in url-->
+                <div class="col-xs-12 col-sm-12 col-md-6 videoForm">
+                    <form ng-submit="editVideo()">
+                        <!--using two way binding on inputs-->
+                        <label>Video headline*</label>
+                        <br />
+                        <span>80 characters max</span>
+                        <!--$parent - Since ng-if creates a child scope, bind to the parent scope
+                        ngIf transcludes the contents, creating a new scope every time it is created
+                        (as in, if it becomes false, the scope is destroyed; when it becomes true again a new scope is created).-->
+                        <textarea type="text" maxlength="80" required ng-model="$parent.videoEdit.name"></textarea>
+                        <br />
+                        <br />
+                        <label>Video genre*</label>
+                        <br />
+                        <select required ng-model="$parent.videoEdit.genre" ng-init="$parent.videoGenre=videoEdit.genre">
+                            <option value="rock">rock</option>
+                            <option value="pop">pop</option>
+                            <option value="hip-hop">hip-hop</option>
+                            <option value="trance">trance</option>
+                            <option value="clasic">clasic</option>
+                            <option value="jazz">jazz</option>
+                            <option value="blues">blues</option>
+                        </select>
+                        <br />
+                        <br />
+                        <label>Video description</label>
+                        <br />
+                        <span>120 characters max</span>
+                        <textarea maxlength="120" ng-model="$parent.videoEdit.details"></textarea>
+                        <br />
+                        <br />
+                        <label>Video link</label>
+                        <br />
+                        <span>Copy the URL of the youtube video that you wish to save</span>
+                        <input type="text" ng-model="$parent.videoLink" />
+                        <div class="col-xs-4">
+                            <input type="submit" class="btn btn-warning" value="Save" />
+                        </div>
+                        <div class="col-xs-12 valitateText">
+                            <p>
+                                *fields cannot be empty.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 imgForm">
+                <img src="../images/editVideo/edit.jpg" />
+            </div>
+        </section>
+                <section class="col-xs-12" ng-show="user.firstName !== 'Guest'" ng-if="!videoEdit.key" class="col-xs-12">
+                    <h2>Please select a video from the <a href="#!/playlist">playlist</a></h2>
+                </section>
+            </div>
+</main>
+<!--footer-->
+<div ng-include="'/html/footer.html'"></div>
+

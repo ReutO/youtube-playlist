@@ -1,0 +1,65 @@
+﻿<section>
+    <!--general modal for errors-->
+    <div id="generalModal" class="modal fade">
+        <div class="modal-dialog modal-content">
+            <div class="modal-header">
+                <input type="button" class="close" data-dismiss="modal" value="&times;" />
+                <h4 class="modal-title">{{modal.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    {{modal.message}}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-warning" data-dismiss="modal" value="OK" />
+            </div>
+        </div>
+    </div>
+    <!--modal for ready server errors-->
+    <div id="errorReadyModal" class="modal fade">
+        <div class="modal-dialog modal-content">
+            <div class="modal-header">
+                <input type="button" class="close" data-dismiss="modal" value="&times;" />
+                <h4 class="modal-title">Oops!</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    We're having some difficulties in our server.
+                    <br />
+                    Please try again later or contact our customer service.
+                    <br />
+                    error code: {{modal.code}}
+                    <br />
+                    error message: {{modal.message}}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-warning" data-dismiss="modal" value="OK" />
+            </div>
+        </div>
+    </div>
+    <!--modal for unexpected error-->
+    <div id="errorModal" class="modal fade">
+        <div class="modal-dialog modal-content">
+            <div class="modal-header">
+                <input type="button" class="close" data-dismiss="modal" value="&times;" />
+                <h4 class="modal-title">We're sorry!</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    We're having some difficulties in our server.
+                    <br />
+                    Please try again later or contact our customer service.
+                    <br />
+                    error status: {{error.status}},
+                    <br />
+                    error message: {{error.statusText}} {{errorText}}.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-warning" data-dismiss="modal" value="OK" />
+            </div>
+        </div>
+    </div>
+</section>

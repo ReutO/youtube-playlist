@@ -1,0 +1,64 @@
+﻿<main>
+    <!--adding html for modals-->
+    <div ng-include="'/html/modal.html'"></div>
+    <div class="row">
+        <!--show for guest users only-->
+        <div ng-include="'/html/guestUsers.html'"></div>
+        <!--show if user registered-->
+        <section ng-show="user.firstName !== 'Guest'" class="col-xs-12">
+            <div id="navigationtpath">
+                <span><a href="#!/addVideo">Add Video</a></span>
+                <span><</span>
+                <span><a href="#!/playlist">Playlist</a></span>
+            </div>
+        </section>
+        <section class="col-xs-12" ng-show="user.firstName !== 'Guest'">
+            <div class="col-xs-12 col-sm-12 col-md-6 videoForm">
+                <form ng-submit="addVideo()">
+                    <label>Video headline*</label>
+                    <br />
+                    <span>80 characters max</span>
+                    <textarea type="text" maxlength="80" ng-model="videoName" required></textarea>
+                    <br />
+                    <br />
+                    <label>Video genre*</label>
+                    <br />
+                    <select ng-model="videoGenre" ng-init="videoGenre='rock'" required>
+                        <option value="rock">Rock</option>
+                        <option value="pop">Pop</option>
+                        <option value="hip-hop">Hip-hop</option>
+                        <option value="trance">Trance</option>
+                        <option value="clasic">Clasic</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="blues">Blues</option>
+                    </select>
+                    <br />
+                    <br />
+                    <label>Video description</label>
+                    <br />
+                    <span>120 characters max</span>
+                    <textarea maxlength="120" ng-model="videoDesc"></textarea>
+                    <br />
+                    <br />
+                    <label>Video link*</label>
+                    <br />
+                    <span>Copy the URL of the youtube video that you wish to save</span>
+                    <input type="text" ng-model="videoLink" />
+                    <div class="col-xs-4">
+                        <input type="submit" class="btn btn-warning" value="Add video" required />
+                    </div>
+                    <div class="col-xs-12 valitateText">
+                        <p>
+                            *Please fill all required form fields, thanks!
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 imgForm">
+                <img src="../images/addVideo/add.png" />
+            </div>
+        </section>
+    </div>
+</main>
+<!--footer-->
+<div ng-include="'/html/footer.html'"></div>

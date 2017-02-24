@@ -1,0 +1,60 @@
+﻿<main>
+    <section>
+        <!--headline-->
+        <div class="row main">
+            <div class="col-xs-12 jumbotron mainErea register">
+                <h1>Register</h1>
+            </div>
+        </div>
+    </section>
+    <!--adding html for modals-->
+    <div ng-include="'/html/modal.html'"></div>
+    <!--navigation-->
+    <div class="row">
+        <section class="col-xs-12">
+            <div id="navigationtpath">
+                <span><a href="#!/register">Register</a></span>
+                <span><</span>
+                <span><a href="#!/login">Login</a></span>
+            </div>
+        </section>
+        <!--register form-->
+        <section>
+            <form ng-submit="register()">
+                <div class="col-xs-12 centerDiv">
+                    <h3><b>We're happy you're joining us!</b></h3>
+                    <br />
+                    <div class="registerDiv alignLeftDiv">
+                        <label>First name*:</label>
+                        <br />
+                        <input type="text" required ng-model="firstName" />
+                        <br />
+                        <label>Last name*:</label>
+                        <br />
+                        <input type="text" required ng-model="lastName" />
+                        <br />
+                        <label>Email*:</label>
+                        <br />
+                        <input type="email" required ng-model="email" />
+                        <br />
+                        <label>Password**:</label>
+                        <br />
+                        <input type="password" pattern=".{4,10}" required title="4 to 10 characters" ng-model="password" /><!--for limiting the number of characters-->
+                        <br />
+                        <br />
+                        <input type="submit" class="btn btn-warning" value="Register" />
+                        <div class="valitateText">
+                            <p>
+                                *Please fill all required form fields, thanks!
+                                <br />
+                                **Password must be between 4 to 10 characters.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+<!--footer-->
+<div ng-include="'/html/footer.html'"></div>

@@ -1,0 +1,25 @@
+﻿.videoDetails a input{
+    font-size:large;
+}
+@media (max-width:992px) {
+    #videoSection {
+        display: flex;
+        flex-direction: column;
+    }
+    div.col-xs-12.col-md-6.videoDetails{
+        order:2;
+    }
+    div.col-xs-12.col-md-6.videoFrame{
+        order:1;
+    }
+}
+@media (min-width: 992px) and (max-width:1148px) {
+    div.col-xs-12.col-md-6.videoFrame iframe{
+        width: 450px !important;
+    }
+}
+@media (max-width:619px) {
+    div.col-xs-12.col-md-6.videoFrame iframe{
+        width: 450px !important;
+    }
+}

@@ -1,0 +1,35 @@
+﻿<main>
+    <!--adding html for modals-->
+    <div ng-include="'/html/modal.html'"></div>
+    <div class="row">
+        <!--show for guest users only-->
+        <div ng-include="'/html/guestUsers.html'"></div>
+        <!--show only for registerd users-->
+        <section ng-show="user.firstName !== 'Guest'" class="col-xs-12">
+            <div id="navigationtpath">
+                <span><a href="#!/watchVideo">Watch Video</a></span>
+                <span><</span>
+                <span><a href="#!/playlist">Playlist</a></span>
+            </div>
+        </section>
+        <section id ="videoSection"class="col-xs-12" ng-show="user.firstName !== 'Guest'" ng-if="link">
+            <div class="col-xs-12 col-sm-12 col-md-6 videoDetails">
+                <h2>{{video.name}}</h2>
+                <h4><b>Genre:</b></h4>
+                <p>{{video.genre}}</p>
+                <h4 ng-show="video.details"><b>Details:</b></h4>
+                <p ng-show="video.details">{{video.details}}</p>
+                <a href="#!/editVideo/{{video.key}}"><input type="button" class="btn btn-info" value="Edit" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 videoFrame">
+                <!--Due to angular's $sce security limitations, we need to use "trustSrc" to allow replacing iFrame's src link-->
+                <iframe width="560" height="315" ng-src="{{trustSrc(link+'?autoplay=1')}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <section class="col-xs-12" ng-show="user.firstName !== 'Guest'" ng-if="!link" class="col-xs-12">
+            <h2>Please select a video from the <a href="#!/playlist">playlist</a></h2>
+        </section>
+    </div>
+</main>
+<!--footer-->
+<div ng-include="'/html/footer.html'"></div>

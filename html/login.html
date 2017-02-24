@@ -1,0 +1,53 @@
+﻿<main>
+    <section>
+        <!--headline-->
+        <div class="row main">
+            <div class="col-xs-12 jumbotron mainErea login">
+                <h1>Login</h1>
+            </div>
+        </div>
+    </section>
+    <!--adding html for modals-->
+    <div ng-include="'/html/modal.html'"></div>
+    <div class="row">
+        <!--navigation-->
+        <section class="col-xs-12">
+            <div id="navigationtpath">
+                <span><a href="#!/register">Register</a></span>
+                <span>|</span>
+                <span><a href="#!/login">Login</a></span>
+            </div>
+        </section>
+        <!--login form-->
+        <section>
+            <div class="col-xs-12 centerDiv">
+                <!--for making the text align center-->
+                <div class="alignLeftDiv loginForm">
+                    <!--for making the text align left-->
+                    <form ng-submit="login()">
+                        <label>Email:</label>
+                        <br />
+                        <input type="email" required ng-model="emailLogin" />
+                        <br />
+                        <br />
+                        <label>Password:</label>
+                        <br />
+                        <input type="password" pattern=".{4,10}" title="4 to 10 characters" required ng-model="passwordLogin" />
+                        <br />
+                        <br />
+                        <input type="submit" id="submitButton" class="btn btn-warning" value="Login" />
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-12 registerLink">
+                <p>
+                    Or
+                    <br />
+                    <a href="#!/register">register here!</a>
+                </p>
+            </div>
+        </section>
+    </div>
+</main>
+<!--footer-->
+<div ng-include="'/html/footer.html'"></div>

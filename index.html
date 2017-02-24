@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <title>Ovadia Music</title>
+    <!--jquery- from angular documitation: "to use jQuery, simply ensure it is loaded before the angular.js file" -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--local css-->
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/register.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+    <link href="css/footer.css" rel="stylesheet" />
+    <link href="css/login.css" rel="stylesheet" />
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/playlist.css" rel="stylesheet" />
+    <link href="css/watchVideo.css" rel="stylesheet" />
+
+    <!--local js-->
+    <script src="scripts/appModule.js"></script>
+    <script src="scripts/homeModule.js"></script>
+    <script src="scripts/loginModule.js"></script>
+    <script src="scripts/registerModule.js"></script>
+    <script src="scripts/playlistModule.js"></script>
+    <script src="scripts/serviceModule.js"></script>
+    <script src="scripts/watchVideoModule.js"></script>
+    <script src="scripts/addVideoModule.js"></script>
+    <script src="scripts/editVideoModule.js"></script>
+
+</head>
+<body>
+    <div class="container-fluid"> <!--Bootstrap container-->
+        <div ng-include="'/html/header.html'"></div>
+        <div ng-view></div>
+        <!--footer needs to be added on every partial page, or the "last views videos" fiture won't work-->
+    </div>
+
+</body>
+</html>

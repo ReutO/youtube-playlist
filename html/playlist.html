@@ -1,0 +1,88 @@
+﻿<main>
+    <section>
+        <!--headline-->
+        <div class="row main">
+            <div class="col-xs-12 jumbotron mainErea playlist">
+                <h1>Playlist</h1>
+            </div>
+        </div>
+    </section>
+    <!--adding html for modals-->
+    <div ng-include="'/html/modal.html'"></div>
+    <div class="row">
+        <!--show only for registerd users-->
+        <section ng-show="user.firstName !== 'Guest'" class="col-xs-12">
+            <div id="navigationtpath">
+                <span><a href="#!/playlist">Playlist</a></span>
+                <span>|</span>
+                <span><a ng-click="logout()">Logout</a></span>
+            </div>
+        </section>
+        <!--show for registered users-->
+        <section id="welcomeUser" ng-show="user.firstName !== 'Guest'" class="col-xs-12">
+            <h2>Welcome {{user.firstName}},</h2>
+            <!--show only for guest users-->
+            <h3 ng-show="user.firstName == 'Guest'">To create your own playlist <a href="#!/register">register now!</a></h3>
+        </section>
+        <!--show for guest users only-->
+        <div ng-include="'/html/guestUsers.html'"></div>
+        <!--show only for registerd users-->
+        <section class="col-xs-12 addVideoButton" ng-show="user.firstName !== 'Guest'">
+            <a href="#!/addVideo"><input type="button" class="btn btn-warning" value="Add new Video"></a>
+        </section>
+        <section id="filters" ng-show="user.firstName !== 'Guest'" ng-if="playlist.length">
+            <div>
+                <label>Search video by name:</label>
+                <!--$parent - Since ng-if creates a child scope, bind to the parent scope
+                ngIf transcludes the contents, creating a new scope every time it is created
+                (as in, if it becomes false, the scope is destroyed; when it becomes true again a new scope is created).-->
+                <input type="text" ng-model="$parent.textBoxSearch" />
+            </div>
+            <div>
+                <label>Order By: </label>
+                <select ng-model="$parent.videoSorting" ng-init="$parent.videoSorting='name'">
+                    <option value="name">Video Name</option>
+                    <option value="genre">Gener</option>
+                </select>
+            </div>
+            <div>
+                <input id="asc" type="radio" name="sortOrder" ng-model="$parent.direction" />
+                <label for="asc">Ascending</label>
+                <input id="desc" type="radio" name="sortOrder" ng-model="$parent.direction" value="reverse" />
+                <label for="desc">Descending</label>
+            </div>
+        </section>
+        <section ng-show="user.firstName !== 'Guest'" ng-if="playlist.length">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Video Name</th>
+                        <th>Genre</th>
+                        <th>More Details</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="video in playlist | filter: textBoxSearch |  orderBy: videoSorting:direction">
+                        <th scope=" row">
+                            {{$index+1}}
+                        </th>
+                        <td>{{video.name}}</td>
+                        <td>{{video.genre}}</td>
+                        <td>{{video.details}}</td>
+                        <td class="tableButtons">
+                            <input type="button" ng-click="deleteVideo(video.key)" class="btn btn-danger" value="Delete" />
+                            <a href="#!/editVideo/{{video.key}}"><input type="button" class="btn btn-info" value="Edit" /></a>
+                        </td>
+                        <td class="tableButtons">
+                            <a href="#!/watchVideo/{{video.key}}"><input type="button" class="btn btn-warning" value="Watch" /></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</main>
+<!--footer-->
+<div ng-include="'/html/footer.html'"></div>

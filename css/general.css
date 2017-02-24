@@ -1,0 +1,63 @@
+﻿body {
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+}
+section{
+    margin-bottom:10px;
+}
+div.col-xs-12.jumbotron.mainErea{
+    text-align: center;
+}
+div.row.main div.col-xs-12.jumbotron.mainErea h1{
+    color:orange;
+    background-color:rgba(232, 228, 228, 0.51);
+    text-shadow: 2px 2px #000000;
+}
+/*div for making the text align center*/
+div.centerDiv{
+    text-align:center;
+}
+/*div for making the text align left*/
+div.centerDiv> div.alignLeftDiv{
+    display: inline-block;
+    text-align:left;
+}
+#navigationtpath{
+    float:right;
+}
+#navigationtpath span{
+    margin-right: 20px;
+}
+#navigationtpath span:last-child{
+    cursor:pointer;
+    font-size: 20px;
+}
+.videoForm span {
+    font-size: medium;
+    color: #808080;
+}
+.videoForm select, .videoForm textarea, .videoForm input{
+    width: 100%;
+}
+.videoForm .col-xs-4 input{
+    margin-left: -13px;
+    margin-top: 10px;
+    font-size: large;
+}
+div.imgForm{
+    padding-left: 65px;
+    padding-top: 50px;
+}
+#welcome> h1{
+    color:orange;
+}
+@media (min-width: 992px) and (max-width:1363px) {
+    div.col-xs-12.col-sm-12.col-md-6.imgForm img{
+        width: 430px;
+    }
+}
+@media (max-width:992px) {
+    div.imgForm {
+        display:none;
+    }
+}

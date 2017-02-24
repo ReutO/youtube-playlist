@@ -1,0 +1,18 @@
+﻿div.col-xs-12.jumbotron.mainErea.register{
+    background-image: url("../images/register/background.jpg");
+}
+div.registerDiv{
+    width:400px;
+    margin-bottom:20px;
+}
+div.registerDiv> input{
+    width:100%;
+    font-size:large;
+}
+div.valitateText {
+    font-size: large;
+    color: #808080;
+    margin-top:10px;
+    padding:0;
+
+}

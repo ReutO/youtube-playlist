@@ -1,0 +1,25 @@
+﻿div.col-xs-12.jumbotron.mainErea.login{
+    background-image: url("../images/login/background.jpg");
+}
+div.col-xs-12.centerDiv{
+    text-align:center;
+}
+div.alignLeftDiv.loginForm{
+    width:450px;
+    margin-bottom:20px;
+}
+div.alignLeftDiv.loginForm input{
+    width:100%;
+    font-size:large;
+}
+div.registerLink{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:20px;
+}
+@media (max-width:768px) {
+    .registerLink {
+        display: none;
+    }
+
+}

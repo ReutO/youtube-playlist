@@ -1,0 +1,35 @@
+﻿div.col-xs-12.jumbotron.mainErea.playlist{
+    background-image: url("../images/playlist/headerBackground.jpg");
+}
+.tableButtons input, .tableButtons a input {
+    width: 70px;
+}
+#filters> div{
+    margin-right: 20px;
+    display: inline-block;
+}
+#welcomeUser h2{
+    color:orange;
+}
+#filters{
+    margin-bottom: 30px;
+    padding:10px;
+}
+table{
+    padding: 10px;
+}
+.addVideoButton{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.addVideoButton> a> input{
+    font-size: large;
+}
+@media (max-width:604px) {
+    table.table.table-hover{
+        font-size: medium;
+    }
+    .tableButtons input, .tableButtons a input {
+        width: 60px;
+}
+}

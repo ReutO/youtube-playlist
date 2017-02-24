@@ -1,0 +1,45 @@
+﻿<footer class="footerIndex">
+    <div class="row footerDiv">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <br />
+            <b><u>Get in touch with us</u></b>
+            <br />
+            <br />
+            <b>Ovadia Music company Inc</b>
+            <br />
+            <br /> Ovadia st. 120 Azor, Israel 1987
+            <br />
+            <br /> +972 3 7539782
+            <br /> customer.service@OvadiaMusic.com
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 pages">
+            <br />
+            <b><u>Pages</u></b>
+            <br />
+            <br />
+            <a href="#!/home">Home</a>
+            <br />
+            <a href="#!/playlist">Playlist</a>
+            <br />
+            <a href="#!/login">Register/Login</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <br />
+            <b><u>Latest views</u></b>
+            <br />
+            <br />
+            <p ng-show="!wachedVideos || !wachedVideos.firstVideo && !wachedVideos.secondVideo && !wachedVideos.thirdVideo">No videos were viewed yet.</p>
+            <p><a href="#!/watchVideo/{{wachedVideos.firstVideo.key}}" ng-show="wachedVideos.firstVideo">{{wachedVideos.firstVideo.name}}</a></p>
+            <p><a href="#!/watchVideo/{{wachedVideos.secondVideo.key}}" ng-show="wachedVideos.secondVideo">{{wachedVideos.secondVideo.name}}</a></p>
+            <p><a href="#!/watchVideo/{{wachedVideos.thirdVideo.key}}" ng-show="wachedVideos.thirdVideo">{{wachedVideos.thirdVideo.name}}</a></p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <br />
+            <b><u>Copyright</u></b>
+            <br />
+            <br />
+            All rights resieved to Youtube company Inc.
+        </div>
+
+    </div>
+</footer>
