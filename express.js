@@ -3,6 +3,12 @@ var fs = require("fs");
 var bodyParser = require('body-parser'); //for post requests
 var randToken = require('rand-token'); //Create a token generator 
 var crypto = require('crypto'); //for hashing a password
+var firebase = require("firebase-admin"); // firebase
+
+firebase.initializeApp({
+    serviceAccount: "./ovadia-music-a97df37204e4.json",
+    databaseURL: "https://ovadia-music.firebaseio.com/"
+});
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
